@@ -8,6 +8,7 @@ public class Hoge {
 
     private String value;
 
+    // フィールドをタグの属性と紐付ける
     @XmlAttribute
     public int getId() {
         return id;

@@ -12,6 +12,7 @@ public class UnmarshalSample1 {
                 + "  <id>20</id>"
                 + "  <value>hogehoge</value>"
                 + "</hoge>";
+        // フィールドをタグの属性と紐付ける
         String xml = "<?xml version=\"1.0\"?>"
                 + "<hoge id=\"10\">"
                 + "  <value>hogehoge</value>"

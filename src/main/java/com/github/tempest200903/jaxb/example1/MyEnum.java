@@ -1,4 +1,4 @@
-package com.github.tempest200903.jaxb;
+package com.github.tempest200903.jaxb.example1;
 
 import javax.xml.bind.annotation.XmlEnumValue;
 

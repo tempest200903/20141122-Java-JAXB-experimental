@@ -1,11 +1,14 @@
 package com.github.tempest200903.jaxb;
 
+import javax.xml.bind.annotation.XmlAttribute;
+
 public class Hoge {
 
     private int id;
 
     private String value;
 
+    @XmlAttribute
     public int getId() {
         return id;
     }

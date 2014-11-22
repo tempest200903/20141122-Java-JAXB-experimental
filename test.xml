@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hoge>
+  <fuga>
+    <num>123</num>
+  </fuga>
+
+  <list>
+    <fuga>
+      <num>543</num>
+    </fuga>
+    <piyo value="piyopiyo" />
+  </list>
+</hoge>

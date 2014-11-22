@@ -23,13 +23,21 @@ public class UnmarshalSample1 {
                 + "<hoge-value>hoge</hoge-value>"
                 + "</hoge>";
         // 要素の順序の決定
-        String xml = "<?xml version=\"1.0\"?>"
+        String xml4 = "<?xml version=\"1.0\"?>"
                 + "<hoge hoge-id=\"10\">"
                 + "<hoge-value>hoge</hoge-value>"
                 + "<one>1</one>"
                 + "<two>2</two>"
                 + "<three>3</three>"
                 + "</hoge>";
+        // ルートタグの名前を変更する
+        String xml = "<?xml version=\"1.0\"?>"
+                + "<hoge-tag hoge-id=\"10\">"
+                + "<hoge-value>hoge</hoge-value>"
+                + "<one>1</one>"
+                + "<two>2</two>"
+                + "<three>3</three>"
+                + "</hoge-tag>";
 
         Hoge hoge = JAXB.unmarshal(new StringReader(xml), Hoge.class);
         System.out.println("hoge =: " + hoge);

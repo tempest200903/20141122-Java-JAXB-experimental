@@ -13,11 +13,16 @@ public class UnmarshalSample1 {
                 + "  <value>hogehoge</value>"
                 + "</hoge>";
         // フィールドをタグの属性と紐付ける
-        String xml = "<?xml version=\"1.0\"?>"
+        String xml2 = "<?xml version=\"1.0\"?>"
                 + "<hoge id=\"10\">"
                 + "  <value>hogehoge</value>"
                 + "</hoge>";
-        
+        // タグと属性の名前を任意の値に変更する
+        String xml = "<?xml version=\"1.0\"?>"
+                + "<hoge hoge-id=\"10\">"
+                + "<hoge-value>hoge</hoge-value>"
+                + "</hoge>";
+
         Hoge hoge = JAXB.unmarshal(new StringReader(xml), Hoge.class);
         System.out.println("id=" + hoge.getId() + ", value=" + hoge.getValue());
     }

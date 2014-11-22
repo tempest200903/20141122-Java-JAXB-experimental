@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -23,7 +24,7 @@ public class Hoge {
     private String two = "2";
 
     private String value;
-    
+
     Hoge() {
         super();
         listValue.add("aaa");
@@ -37,6 +38,9 @@ public class Hoge {
         return id;
     }
 
+    // Listの変換をいい感じにする
+    @XmlElementWrapper(name = "list")
+    @XmlElement(name = "element")
     public List<String> getListValue() {
         return listValue;
     }
@@ -91,6 +95,8 @@ public class Hoge {
         StringBuilder builder = new StringBuilder();
         builder.append("Hoge [id=");
         builder.append(id);
+        builder.append(", listValue=");
+        builder.append(listValue);
         builder.append(", one=");
         builder.append(one);
         builder.append(", three=");

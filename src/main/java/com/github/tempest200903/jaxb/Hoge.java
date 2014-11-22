@@ -1,15 +1,20 @@
 package com.github.tempest200903.jaxb;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlRootElement(name="hoge-tag")
-@XmlType(propOrder = { "value", "one", "two", "three" })
+@XmlRootElement(name = "hoge-tag")
+@XmlType(propOrder = { "value", "one", "two", "three", "listValue" })
 public class Hoge {
 
     private int id;
+
+    private List<String> listValue = new ArrayList<String>();
 
     private String one = "1";
 
@@ -18,11 +23,22 @@ public class Hoge {
     private String two = "2";
 
     private String value;
+    
+    Hoge() {
+        super();
+        listValue.add("aaa");
+        listValue.add("bbb");
+        listValue.add("ccc");
+    }
 
     // タグと属性の名前を任意の値に変更する
     @XmlAttribute(name = "hoge-id")
     public int getId() {
         return id;
+    }
+
+    public List<String> getListValue() {
+        return listValue;
     }
 
     public String getOne() {
@@ -45,6 +61,10 @@ public class Hoge {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public void setListValue(List<String> listValue) {
+        this.listValue = listValue;
     }
 
     public void setOne(String one) {

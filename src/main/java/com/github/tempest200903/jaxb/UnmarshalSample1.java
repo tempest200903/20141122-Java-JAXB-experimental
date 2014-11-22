@@ -18,12 +18,21 @@ public class UnmarshalSample1 {
                 + "  <value>hogehoge</value>"
                 + "</hoge>";
         // タグと属性の名前を任意の値に変更する
-        String xml = "<?xml version=\"1.0\"?>"
+        String xml3 = "<?xml version=\"1.0\"?>"
                 + "<hoge hoge-id=\"10\">"
                 + "<hoge-value>hoge</hoge-value>"
                 + "</hoge>";
+        // 要素の順序の決定
+        String xml = "<?xml version=\"1.0\"?>"
+                + "<hoge hoge-id=\"10\">"
+                + "<hoge-value>hoge</hoge-value>"
+                + "<one>1</one>"
+                + "<two>2</two>"
+                + "<three>3</three>"
+                + "</hoge>";
 
         Hoge hoge = JAXB.unmarshal(new StringReader(xml), Hoge.class);
-        System.out.println("id=" + hoge.getId() + ", value=" + hoge.getValue());
+        System.out.println("hoge =: " + hoge);
     }
+
 }
